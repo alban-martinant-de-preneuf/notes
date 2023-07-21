@@ -1,0 +1,2 @@
+- # vi
+	- ![Capture d’écran du 2023-01-21 17-36-09.png](../assets/Capture_d’écran_du_2023-01-21_17-36-09_1674318989277_0.png)

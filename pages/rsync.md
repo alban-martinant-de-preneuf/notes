@@ -1,0 +1,9 @@
+- # rsync
+	- Dois être installé côté serveur et client :
+		- `apt install rsync`
+	- Mettre en place les clés pour le SSH (voir SSH)
+	- Syncroniser :
+		- `rsync -avz --delete /mnt/LVM user1@192.168.1.233:/mnt/LVM/`
+	- Pour faire des backup automatiquement :
+		- `crontab -e` puis ajouter :
+			- `0 2 * * * rsync -avz --delete /mnt/LVM/ user1@192.168.1.233:/mnt/LVM/`

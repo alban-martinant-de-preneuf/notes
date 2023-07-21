@@ -1,0 +1,28 @@
+- # Certificate Authority (CA)
+	- ## Installation
+		- Installer easy-rsa :
+			- `sudo apt update`
+			- `sudo apt install easy-rsa`
+		-
+		- Il faut être connecté avec un utilisateur normal.
+		- On crée un dossier dans le home de l'utilisateur courant :
+			- `mkdir ~/easy-rsa`
+		- Puis on crée un lien vers les fichiers du package easy-rsa :
+			- `ln -s /usr/share/easy-rsa/* ~/easy-rsa/`
+			- (Dans la plupart des tutos, on fait une simple copie des fichier mais ici on fait un lien)
+		- On restreint l'accès à l'utilisateur propriétaire :
+			- `chmod 700 ~/easy-rsa`
+		- On se place dans le répertoire et on initialise la PKI (Public key infrastructure) :
+			- `cd ~/easy-rsa`
+			- `./easy-rsa init-pki`
+		- Il faut ensuite créer dans le dossier "easy-rsa" un fichier nommé "vars" et le remplir. On va simplement copier le fichier d'exemple et le remplir :
+			- `cp var.exemple vars`
+			- `nano vars`
+				- `set_var EASYRSA_REQ_COUNTRY    "FR"`
+				  `set_var EASYRSA_REQ_CITY       "Marseille"`
+				  `set_var EASYRSA_REQ_ORG        "MonOrganisation"`
+				  `set_var EASYRSA_REQ_EMAIL      "alban.martinant-de-preneuf@laplateforme.io"`
+				  `set_var EASYRSA_DIGEST         "sha512"`
+	-
+	- ## Sources
+		- https://www.digitalocean.com/community/tutorials/how-to-set-up-and-configure-a-certificate-authority-ca-on-ubuntu-20-04

@@ -1,0 +1,35 @@
+- # open VPN
+	- ## Installation
+		- `apt-get install openvpn easy-rsa`
+		- ## Easy-RSA et certificats serveurs
+		- `cp vars.example vars`
+		- Éditer `vars`, ajouter à la fin :
+			- `set_var EASYRSA_REQ_COUNTRY    "FR"`
+			  `set_var EASYRSA_REQ_PROVINCE   "FRANCE"`
+			  `set_var EASYRSA_REQ_CITY       "Marseille"`
+			  `set_var EASYRSA_REQ_ORG        "komptaplusbien.com"`
+			  `set_var EASYRSA_REQ_EMAIL      "contact@komptabienplus.com"`
+			  `set_var EASYRSA_REQ_OU         "OUVPN"`
+	- `chmod +x vars`
+collapsed:: true
+		- ./easyrsa init-pki`
+		- ![Capture d’écran du 2023-01-16 14-21-24.png](../assets/Capture_d’écran_du_2023-01-16_14-21-24_1673875295324_0.png){:height 154, :width 535}
+	- Créer les certificats du serveur :
+collapsed:: true
+		- `./easyrsa build-ca nopass`
+			- ![Capture d’écran du 2023-01-16 14-47-34.png](../assets/Capture_d’écran_du_2023-01-16_14-47-34_1673876870781_0.png)
+	- Créer les clés publiques et privées, ici elles se nomment server :
+collapsed:: true
+		- `./easyrsa gen-req server nopass`
+			- ![Capture d’écran du 2023-01-16 14-54-30.png](../assets/Capture_d’écran_du_2023-01-16_14-54-30_1673877285467_0.png)
+	- `./easyrsa sign-req server server`
+collapsed:: true
+		- ![Capture d’écran du 2023-01-16 15-19-59.png](../assets/Capture_d’écran_du_2023-01-16_15-19-59_1673878807100_0.png){:height 392, :width 525}
+	- `./easyrsa gen-dh`
+collapsed:: true
+		- ![Capture d’écran du 2023-01-16 15-21-17.png](../assets/Capture_d’écran_du_2023-01-16_15-21-17_1673878883929_0.png){:height 302, :width 525}
+	- `openvpn --genkey secret ta.key`
+	- `mv /usr/share/easy-rsa/ta.key /usr/share/easy-rsa/pki/`
+-
+- ## Sources :
+	- https://www.malekal.com/comment-installer-openvpn-sur-ubuntu-debian/

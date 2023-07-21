@@ -1,0 +1,27 @@
+- # Samba
+-
+- ## installation et configuration :
+	- `apt install samba`
+	- Créer les groupes :
+		- `addgroup samba_admin`
+		- `addgroup samba_user`
+	- Créer les utilisateurs :
+		- `adduser <user>`
+	- Définir les mots de passe pour samba :
+		- `smbpasswd -a <username>`
+	- Voir les utilisateurs SAMBA :
+		- `pdbedit -L`
+		- ![Capture d’écran du 2023-02-01 14-06-38.png](../assets/Capture_d’écran_du_2023-02-01_14-06-38_1675257011479_0.png)
+	- Ajouter les utilisateurs au groupe adéquate :
+		- `gpasswd -a <user> <group>`
+	- Éditer le fichier de configuration `/etc/samba/smb.conf`:
+		- ![Capture d’écran du 2023-02-01 13-36-22.png](../assets/Capture_d’écran_du_2023-02-01_13-36-22_1675255094905_0.png)
+		- ![Capture d’écran du 2023-02-01 13-36-48.png](../assets/Capture_d’écran_du_2023-02-01_13-36-48_1675255102802_0.png)
+- ## Montage sur le client
+	- `sudo mount -t cifs //192.168.1.222/samba /mnt/samba -o username=aallyant,password=smbaa,uid=user1,rw`
+	- Pour démonter :
+		- `sudo umount /mnt/samba`
+		-
+-
+-
+-

@@ -1,0 +1,15 @@
+- ## Installation
+	- Télécharger l'installeur sur https://www.apachefriends.org/fr/index.html
+	- Donner les droits d'exécution :
+		- `chmod +x xampp-linux-*-installer.run`
+	- Exécuter :
+		- `./xampp-linux-*-installer.run`
+-
+- ## Utilisation
+	- Pour démarrer (il faut être en root):
+		- `/opt/lampp/lampp start`
+	- Pour stopper :
+		- `/opt/lampp/lampp stop`
+-
+- ## Sources
+	- https://openclassrooms.com/fr/courses/918836-concevez-votre-site-web-avec-php-et-mysql/4237816-preparez-votre-environnement-de-travail

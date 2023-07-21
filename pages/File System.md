@@ -1,0 +1,3 @@
+- # Type
+	- ## ZFS
+		- ZFS est à la fois un système de fichier (comme esxt4, NTFS, exfat...) et un gestionnaire de volume logique (comme LVM).

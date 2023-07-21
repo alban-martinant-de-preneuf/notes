@@ -1,0 +1,31 @@
+- # NFS
+	- NFS utilise le port 2049 (les versions antérieurs à la v4 utilisent aussi le port 111)
+	- Network File System (ou 'NFS', système de fichiers en réseau) est à l'origine un protocole développé par Sun Microsystems en 1984 qui permet à un ordinateur d'accéder à des fichiers via un réseau. Il fait partie de la couche application du modèle OSI et utilise le protocole RPC.
+-
+- ## Installation et configuration du serveur :
+	- ### Installation :
+		- `apt install nfs-kernel-server`
+		- Pour qu'il démarre automatiquement avec le système :
+			- `sudo systemctl enable nfs.server.service`
+	- ### Configuration :
+		- Créer un dossier pour le partage :
+			- `mkdir /creditIndustrielShare`
+		- Éditer le fichier `/etc/exports`, ajouter:
+			- `/creditIndustrielShare/ 192.168.1.0/24(rw,sync,no_subtree_check)`
+				- rw : partage accessible en lecture et écriture, à remplacer par "ro" pour la lecture seule
+				- sync : écrire les données et les vérifier avant de répondre à la requête suivante : plus lent, mais plus fiable vis-à-vis des corruptions de données. L'autre mode est "async".
+				- no_subtree_check : désactiver la vérification des sous-dossiers, recommandé pour des raisons de fiabilité.
+		- Redémarrer le service :
+			- `service nfs-kernel-server reload`
+-
+- ## Installation et configuration du client :
+	- Installer le paquet "nfs-common" afin de pouvoir monter le partage NFS sur l'hôte local :
+		- `sudo apt install nfs-common`
+		-
+		- Créer un dossier qui servira de point de montage:
+			- `mkdir /media/creditIndustrielShare`
+		-
+		- Modifier la table de montage dans `/etc/fstab`
+			- `192.168.1.200:/creditIndustrielShare/    /media/creditIndustrielShare   nfs4     defaults      0       0`
+		- Charger le contenu de `/etc/fstab`:
+			- `sudo mount -a`

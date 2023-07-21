@@ -1,0 +1,7 @@
+- ## Installation
+	- `yarn create vite`
+	- Se déplacer dans le dossier créé puis :
+	- `yarn`
+	- `git init`
+- ## Lancement
+	- `yarn run dev`

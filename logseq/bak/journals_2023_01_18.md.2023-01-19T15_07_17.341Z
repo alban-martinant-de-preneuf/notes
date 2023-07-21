@@ -1,0 +1,37 @@
+- Ajouter un utilisateur à un groupe :
+	- `sudo usermod -a -G [group] [user]`
+	- pour acl selon chatGPT :
+		- `sudo apt-get install acl attr`
+- Pour avoir "nfs4_getfacl"
+	- `apt install nfs4-acl-tools`
+-
+- ### Étapes suivis pour openVPN :
+	- #### Installation OpenVPN et Easy-RSA :
+		- `sudo apt update`
+		- `sudo apt install openvpn easy-rsa`
+		- `mkdir ~/easy-rsa`
+		- `ln -s /usr/share/easy-rsa/* ~/easy-rsa/`
+		- `chmod 700 ~/easy-rsa`
+	- #### Création d'une IPC (Infrastructure à clé publique) pour OpenVPN :
+		- `cd ~/easy-rsa`
+		- `nano vars`
+			- `set_var EASYRSA_ALGO "ec"` (peut être à changer)
+			  `set_var EASYRSA_DIGEST "sha512"`
+			- Configurer vos serveurs OpenVPN & AC pour utiliser l’ECC signifie que lorsqu’un client et un serveur tentent d’établir une clé symétrique partagée, ils peuvent utiliser des algorithmes de courbe elliptique pour effectuer leur échange. L’utilisation de l’ECC pour un échange de clés est nettement plus rapide que l’utilisation de la méthode de Diffie-Hellman avec l’algorithme RSA classique, car les nombres sont beaucoup plus petits et les calculs sont plus rapides.
+		- `./easyrsa init-pki`
+	- #### Création d’une demande de certificat de serveur OpenVPN et d’une clé privée :
+		- `cd ~/easy-rsa`
+		- `./easyrsa gen-req vpnserver nopass`
+			- ![Capture d’écran du 2023-01-18 11-22-24.png](../assets/Capture_d’écran_du_2023-01-18_11-22-24_1674037357338_0.png)
+		- `sudo cp /home/user1/easy-rsa/pki/private/vpnserver.key /etc/openvpn/server/`
+	- #### Signer la demande de certificat :
+		- Envoyer la demande de signature de certificat au serveur CA :
+			- `scp /home/user1/easy-rsa/pki/reqs/vpnserver.req user1@192.168.1.100:/tmp`
+		- Sur le CA :
+			- `cd ~/easy-rsa`
+			- `./easyrsa import-req /tmp/vpnserver.req vpnserver`
+			- `./easyrsa sign-req server vpnserver` pour signer
+				- ![Capture d’écran du 2023-01-18 13-41-00.png](../assets/Capture_d’écran_du_2023-01-18_13-41-00_1674045772865_0.png)
+			- Copier les fichiers "vpnserver.crt" et "ca.crt" (Il faut que openssh-server soit installé sur le serveur VPN)
+				- `scp pki/issued/server.crt sammy@your_vpn_server_ip:/tmp`
+				- `scp pki/ca.crt sammy@your_vpn_server_ip:/tmp`

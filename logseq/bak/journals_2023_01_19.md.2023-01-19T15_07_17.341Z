@@ -1,0 +1,7 @@
+- ## Clés et certificats
+	- Fichiers *.pem : Format base64 ASCII (souvent pour les clés)
+	- Fichiers *.der : format binaire (souvent pour les certificats)
+	- Certificat X509 : norme qui définit les informations qu'il doit y avoir dans un certificat
+	- RSA : algorithme de cryptographie asymétrique avec paire de clés (public/privée)
+	- PKI : Public Key Infrastructure, c'est le système de gestion des clés
+	- CA : autorité de certification ()

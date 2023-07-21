@@ -1,0 +1,154 @@
+dn: ou=Guichet,dc=creditIndustriel,dc=lan
+objectclass: organizationalUnit
+ou: Guichet
+description: Guichets
+
+dn: ou=ClientsBanque,dc=creditIndustriel,dc=lan
+objectclass: organizationalUnit
+ou: ClientsBanque
+description: Clients
+
+dn: ou=ConseilClientPrive,dc=creditIndustriel,dc=lan
+objectclass: organizationalUnit
+ou: ConseilClientPrive
+description: ConseilClientPrive
+
+dn: ou=GestionConseilPro,dc=creditIndustriel,dc=lan
+objectclass: organizationalUnit
+ou: GestionConseilPro
+description: GestionConseilPro
+
+dn: ou=Direction,dc=creditIndustriel,dc=lan
+objectclass: organizationalUnit
+ou: Direction
+description: Direction
+
+dn: cn=Amelie Lotte,ou=Guichet,dc=creditIndustriel,dc=lan
+objectclass: inetOrgPerson
+objectclass: posixAccount
+givenName: Amelie
+sn: Lotte
+cn: Amelie Lotte
+uid: alotte
+userPassword: alotte
+loginShell: /bin/bash
+uidNumber: 2000
+gidNumber: 2000
+homeDirectory: /home/alotte
+
+dn: cn=Arthur Neutron,ou=Guichet,dc=creditIndustriel,dc=lan
+objectclass: inetOrgPerson
+objectclass: posixAccount
+givenName: Arthur
+sn: Neutron
+cn: Arthur Neutron
+uid: aneutron
+userPassword: aneutron
+loginShell: /bin/bash
+uidNumber: 2001
+gidNumber: 2000
+homeDirectory: /home/aneutron
+
+dn: cn=Bob Voulet,ou=ConseilClientPrive,dc=creditIndustriel,dc=lan
+objectclass: inetOrgPerson
+objectclass: posixAccount
+givenName: Bob
+sn: Voulet
+cn: Bob Voulet
+uid: bvoulet
+userPassword: bvoulet
+loginShell: /bin/bash
+uidNumber: 2002
+gidNumber: 2001
+homeDirectory: /home/bvoulet
+
+dn: cn=Bruno Desange,ou=ConseilClientPrive,dc=creditIndustriel,dc=lan
+objectclass: inetOrgPerson
+objectclass: posixAccount
+givenName: Bruno
+sn: Desange
+cn: Bruno Desange
+uid: bdesange
+userPassword: bdesange
+loginShell: /bin/bash
+uidNumber: 2003
+gidNumber: 2001
+homeDirectory: /home/bdesange
+
+dn: cn=Celine Stoner,ou=GestionConseilPro,dc=creditIndustriel,dc=lan
+objectclass: inetOrgPerson
+objectclass: posixAccount
+givenName: Celine
+sn: Stoner
+cn: Celine Stoner
+uid: cstoner
+userPassword: cstoner
+loginShell: /bin/bash
+uidNumber: 2004
+gidNumber: 2002
+homeDirectory: /home/cstoner
+
+dn: cn=Cyril Potet,ou=GestionConseilPro,dc=creditIndustriel,dc=lan
+objectclass: inetOrgPerson
+objectclass: posixAccount
+givenName: Cyril
+sn: Potet
+cn: Cyril Potet
+uid: cpotet
+userPassword: cpotet
+loginShell: /bin/bash
+uidNumber: 2005
+gidNumber: 2002
+homeDirectory: /home/cpotet
+
+dn: cn=Dorian Matias,ou=Direction,dc=creditIndustriel,dc=lan
+objectclass: inetOrgPerson
+objectclass: posixAccount
+givenName: Dorian
+sn: Matias
+cn: Dorian Matias
+uid: dmatias
+userPassword: dmatias
+loginShell: /bin/bash
+uidNumber: 2006
+gidNumber: 2003
+homeDirectory: /home/dmatias
+
+dn: cn=Bernard Taperio,ou=Direction,dc=creditIndustriel,dc=lan
+objectclass: inetOrgPerson
+objectclass: posixAccount
+givenName: Bernard
+sn: Taperio
+cn: Bernard Taperio
+uid: btaperio
+userPassword: btaperio
+loginShell: /bin/bash
+uidNumber: 2007
+gidNumber: 2003
+homeDirectory: /home/btaperio
+
+dn: cn=Karim Fed,ou=ClientsBanque,dc=creditIndustriel,dc=lan
+objectclass: inetOrgPerson
+objectclass: posixAccount
+givenName: Karim
+sn: Fed
+cn: Karim Fed
+uid: kfed
+userPassword: kfed
+loginShell: /bin/bash
+uidNumber: 2008
+gidNumber: 2004
+homeDirectory: /home/kfed
+
+dn: cn=Cesarine Cordonnier,ou=ClientsBanque,dc=creditIndustriel,dc=lan
+objectclass: inetOrgPerson
+objectclass: posixAccount
+givenName: Cesarine
+sn: Cordonnier
+cn: Cesarine Cordonnier
+uid: ccordonnier
+userPassword: ccordonnier
+loginShell: /bin/bash
+uidNumber: 2009
+gidNumber: 2004
+homeDirectory: /home/ccordonnier

@@ -1,0 +1,43 @@
+- # Configuration IP
+	-
+	- ## Configuration à la volé
+		- Affecter une adresse à une interface :
+		- `ip addr add dev <interface> <ip> <masque>`
+		- exemple :
+		- `ip addr add dev enp0s8 192.168.1.1/24`
+		- Ensuite il faut activer l'interface :
+		- `ip link set <interface> up`
+		- exemple :
+		- `ip link set enp0s8 up`
+	-
+	- ## Configuration en dure
+		- ### Debian
+			- Il faut modifier le fichier de configuration `/etc/network/interfaces`
+			- Par exemple :
+			  `allow-hotplug enp0s8`
+			  `iface enp0s8 inet static`
+			  `  address 192.168.1.10/24`
+			  `  broadcast 192.168.1.255`
+				- La première ligne indique que le câble réseau peut être branché à n'importe quel moment.
+				- La seconde ligne indique que l'on va configurer l'interface enp0s8 manuellement.
+				- La troisième ligne précise l'adresse que l'on veut donner à cette interface et son masque.
+				- La quatrième ligne indique l'adresse de diffusion pour ce réseau.
+			- On relance ensuite l'interface :
+			- `ifdown enp0s8`
+			- `ifup enp0s8`
+		- ### Ubuntu
+			- Sur ubuntu, cela se fait avec Netplan. Il faut faire la configuration dans un fichier .yaml dans le dossier /etc/netplan :
+			- `network:`
+			  `  ethernets:`
+			  `   enp0s8:`
+			  `    addresses: [192.168.122.22/24]`
+			  `     dhcp4: false`
+			  `     dhcp6: false`
+			  `  version: 2`
+			- Et on génère la configuration pour l’appliquer auprès du gestionnaire :
+			- `sudo netplan generate`
+			- `sudo netplan apply`
+	-
+	- ## Source(s)
+		- https://debian-facile.org/doc:reseau:interfaces
+		- https://linux.goffinet.org/administration/configuration-du-reseau/gestion-du-reseau-linux-avec-netplan/

@@ -1,0 +1,49 @@
+- # SSH
+	- ## Principe de fonctionnement
+		- Le serveur écoute les demandes de connexions entrantes
+		- Un client demande une connexion, le serveur lui répond les algorithmes de chiffrement à sa disposition
+		- Le client valide un algorithme et le serveur fournit au client sa clé publique
+		- À partir de ce moment-là, le client peut vérifier que tous les messages qu'il va recevoir proviennent bien du serveur
+		- Le client et le serveur échangent grâce à la cryptographie asymétrique pour s'accorder sur une clé de chiffrement symétrique basée sur un très grand nombre premier, on l'appelle **la clé de session SSH **
+		- Une fois cette clé partagée, le client et le serveur peuvent l'utiliser pour tout le reste de la session.
+		-
+	- ## Installation
+		- Serveur :
+		- `sudo apt install openssh-server`
+		- Client :
+		- `sudo apt install openssh-client`
+		-
+	- ## Connexion SSH
+		- `ssh <user>@<host>`
+		-
+	- ## Connexion avec certificats
+		- On peut commencer par vérifier si le client a déjà des clés SSH :
+			- `ls -l ~/.ssh/id*`
+		- Sinon on génère les clés (public et privée) côté client :
+			- `ssh-keygen`
+		- Par défaut cela créer une paire de clés 2048-bit RSA, pour plus de sécurité on peut créer une paire 4096-bit RSA :
+			- `ssh-keygen -b 4096`
+		- Après, il faut copier la clé public sur le serveur en faisant la commande suivante côté client :
+			- `ssh-copy-id <user>@<serverHostname>`
+		- Pour interdire la connection par mot de passe :
+			- Positionner les options suivantes dans le fichier `/etc/ssh/sshd_config` :
+				- `ChallengeResponseAuthentication no`
+				- `PasswordAuthentication no`
+				- `UsePAM no`
+			- Redémarrer le service sshd :
+				- `systemctl restart sshd`
+		-
+		- #### Sources :
+			- https://phoenixnap.com/kb/generate-ssh-key-debian-10
+	-
+	- ## Transfert de fichier via SSH
+		- Il existe en effet plusieurs manières de faire pour échanger des fichiers en utilisant SSH : SCP - SFTP - SSHFS. SCP est une commande fournis par le paquet "openssh-client".
+		- Envoyer un fichier :
+		- `scp /chemin/fichier/local <user>@<serverHostname>:/chemin/dossier/distant/`
+		- Télécharger un fichier :
+		- `scp <user>@<serverHostname>:/chemin/fichier/distant /chemin/dossier/local/`
+		- Pour les dossiers, il faut ajouter l'option `-r`
+		-
+		- #### Sources :
+			- https://www.it-connect.fr/chapitres/transfert-de-fichier-via-ssh/
+			- https://openclassrooms.com/fr/courses/7274161-administrez-un-systeme-linux/7529351-connectez-vous-a-distance-avec-ssh

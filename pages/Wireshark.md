@@ -1,0 +1,3 @@
+- Pour pouvoir utiliser wireshark avec un utilisateur normal, il faut l'ajouter au groupe wireshark :
+	- `sudo usermod -a -G wireshark <LOGIN>`
+-
