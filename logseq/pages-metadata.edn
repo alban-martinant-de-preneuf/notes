@@ -1,6 +1,6 @@
 [{:block/name "../assets/structure_1673718719067_0.ldif",
-  :block/created-at 1688929118563,
-  :block/updated-at 1688929118563}
+  :block/created-at 1692704330977,
+  :block/updated-at 1692704330977}
  {:block/name "a",
   :block/created-at 1673542395755,
   :block/updated-at 1673542395755}
@@ -16,12 +16,18 @@
  {:block/name "apr 7th, 2023",
   :block/created-at 1680825600000,
   :block/updated-at 1680825600000}
+ {:block/name "aug 22nd, 2023",
+  :block/created-at 1692662400000,
+  :block/updated-at 1692662400000}
+ {:block/name "aug 3rd, 2023",
+  :block/created-at 1691020800000,
+  :block/updated-at 1691020800000}
  {:block/name "b",
   :block/created-at 1673542395755,
   :block/updated-at 1673542395755}
  {:block/name "base de données",
-  :block/created-at 1688929118563,
-  :block/updated-at 1688929118563}
+  :block/created-at 1692704330977,
+  :block/updated-at 1692704330977}
  {:block/name "c",
   :block/created-at 1673542395755,
   :block/updated-at 1673542395755}
@@ -35,8 +41,8 @@
   :block/created-at 1673542395755,
   :block/updated-at 1673542395755}
  {:block/name "cryptographie",
-  :block/created-at 1688929118565,
-  :block/updated-at 1688929118565}
+  :block/created-at 1692704330979,
+  :block/updated-at 1692704330979}
  {:block/name "docker",
   :block/created-at 1677414639592,
   :block/updated-at 1677414817571}
@@ -80,11 +86,17 @@
   :block/created-at 1675900800000,
   :block/updated-at 1675900800000}
  {:block/name "file system",
-  :block/created-at 1688929118565,
-  :block/updated-at 1688929118565}
+  :block/created-at 1692704330979,
+  :block/updated-at 1692704330979}
+ {:block/name "git",
+  :block/created-at 1692704330979,
+  :block/updated-at 1692704330979}
+ {:block/name "git et github",
+  :block/created-at 1691069176099,
+  :block/updated-at 1691069176099}
  {:block/name "gpg",
   :block/created-at 1688925618668,
-  :block/updated-at 1688929111348}
+  :block/updated-at 1692696325716}
  {:block/name "in-progress",
   :block/created-at 1673542395755,
   :block/updated-at 1673542395755}
@@ -136,6 +148,9 @@
  {:block/name "jan 31st, 2023",
   :block/created-at 1675123200000,
   :block/updated-at 1675123200000}
+ {:block/name "jul 21st, 2023",
+  :block/created-at 1689897600000,
+  :block/updated-at 1689897600000}
  {:block/name "jul 9th, 2023",
   :block/created-at 1688860800000,
   :block/updated-at 1688860800000}
@@ -151,6 +166,9 @@
  {:block/name "ldap",
   :block/created-at 1673542395755,
   :block/updated-at 1674029941998}
+ {:block/name "licences",
+  :block/created-at 1692704330978,
+  :block/updated-at 1692704330978}
  {:block/name "linux",
   :block/created-at 1674291198301,
   :block/updated-at 1674659855777}
@@ -214,6 +232,9 @@
  {:block/name "ssh",
   :block/created-at 1673542714819,
   :block/updated-at 1673600578473}
+ {:block/name "symfony",
+  :block/created-at 1692704330979,
+  :block/updated-at 1692704330979}
  {:block/name "todo",
   :block/created-at 1673542395755,
   :block/updated-at 1673542395755}
@@ -230,8 +251,8 @@
   :block/created-at 1673542395755,
   :block/updated-at 1673542395755}
  {:block/name "wireshark",
-  :block/created-at 1688929118563,
-  :block/updated-at 1688929118563}
+  :block/created-at 1692704330977,
+  :block/updated-at 1692704330977}
  {:block/name "xampp",
-  :block/created-at 1688929118566, 
-  :block/updated-at 1688929118566}]
+  :block/created-at 1692704330979, 
+  :block/updated-at 1692704330979}]

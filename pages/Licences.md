@@ -1,0 +1,2 @@
+- ## choisir une licence
+	- https://www.gnu.org/licenses/license-recommendations.html

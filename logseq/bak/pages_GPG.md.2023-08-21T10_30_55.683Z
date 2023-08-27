@@ -3,9 +3,9 @@
 		- `gpg --full-gen-key`
 -
 - ## Configurer l'agent de cache de mot de passe
-- Curieusement, l’outil GPG met en cache les mots de passe. De ce fait, vous (ou toute personne ayant accès à votre système) pourriez décrypter le fichier sans avoir à taper le mot de passe avec la commande `gpg zdnet_test`. Ce n’est pas sûr. Pour contourner ce problème, nous devons désactiver la mise en cache du mot de passe pour l’agent GPG. Pour ce faire, créez un nouveau fichier avec la commande :
+- Curieusement, l’outil GPG met en cache les mots de passe. De ce fait, vous (ou toute personne ayant accès à votre système) pourriez décrypter le fichier sans avoir à taper le mot de passe avec la commande gpg zdnet_test. Ce n’est pas sûr. Pour contourner ce problème, nous devons désactiver la mise en cache du mot de passe pour l’agent GPG. Pour ce faire, créez un nouveau fichier avec la commande :
 - `nano ~/.gnupg/gpg-agent.conf`
-- Dans ce fichier, évrire les lignes suivantes :
+- Dans ce fichier, collez les lignes suivantes :
 - `default-cache-ttl 1 max-cache-ttl 1`
 - Ensuite, redémarrez l’agent avec la commande :
 - `echo RELOADAGENT | gpg-connect-agent`
@@ -18,8 +18,6 @@
 -
 - ## Décrypter avec la clé privée
 	- `gpg --decrypt encryptedfile.gpg > decryptedfile`
-	- ou mieux
-	- `gpg -o decryptedfile -d encryptedfile`
 -
 -
 - ## Encypter avec une clé symétrique
@@ -28,6 +26,7 @@
 	- supprimer les fichier non chiffré
 		- `rm -i file.txt'
 	-
+-
 -
 - ## Méthode GUI
 	- une fois la clé généré :
