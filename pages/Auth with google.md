@@ -1,0 +1,11 @@
+- Aller sur `https://console.developers.google.com`
+- "créer un projet" remplir les champs et valider
+- Aller sur l'écran de consentement OAuth
+- Sélectionner le projet
+- choisir "Externes"
+- [...] à compléter
+-
+-
+- ## sources
+- https://github.com/MusabDev/php-google-login
+- https://www.youtube.com/watch?v=BnJRDXjfxIg

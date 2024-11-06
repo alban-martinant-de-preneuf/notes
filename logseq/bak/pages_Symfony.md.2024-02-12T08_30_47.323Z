@@ -1,0 +1,20 @@
+- ## installation
+	- Il faut que php et composer soient installés
+	- Installer symfony-CLI
+		- `curl -1sLf 'https://dl.cloudsmith.io/public/symfony/stable/setup.deb.sh' | sudo -E bash`
+		- `sudo apt install symfony-cli`
+	- Installation du squelette "Website Skeleton"
+		- `symfony new --full mon-super-projet`
+-
+- ## démarrage
+	- `cd mon-super-projet`
+	- `symfony server:start`
+	- Si le port n'est pas occupé, l'application sera alors disponible à cette adresse :  `http://localhost:8000/`
+-
+- ## Activer les abréviations emmet dans les .twig
+	- Ajouter dans  `~/.config/Code/User/settings.json`
+	- `"emmet.includeLanguages": {"twig": "html"}`
+	-
+- ## Sources
+	- https://openclassrooms.com/fr/courses/5489656-construisez-un-site-web-a-l-aide-du-framework-symfony-5/7171301-installez-symfony-5
+	- https://symfony.com/download

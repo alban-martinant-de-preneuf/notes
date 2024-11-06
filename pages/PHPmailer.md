@@ -1,0 +1,5 @@
+- ## pour gmail
+	- Activer 2fa
+	-
+	- mettre un mot de passe des applications
+	- https://myaccount.google.com/u/2/apppasswords

@@ -6,9 +6,7 @@
 	- Ajouter l'utilisateur au groupe docker :
 		- `sudo usermod -aG docker <user>`
 - ## installation
-	- (`sudo apt install docker.io docker-compose -y`)??
-	- https://docs.docker.com/engine/install/ubuntu
-	- docker compose est maintenant en plugin
+	- `sudo apt install docker.io docker-compose -y`
 - ## récupérer des images
 	- https://hub.docker.com/
 	- `docker pull <name>`
@@ -79,9 +77,6 @@
 		- `docker search nginx`
 - ## Docker-compose
 	- ![image.png](../assets/image_1701189976833_0.png)
--
-- ## nouvelle version
-- executer une commande :
-- `docker compose exec php /bin/sh`
+	-
 - ## Sources
 	- https://openclassrooms.com/fr/courses/2035766-optimisez-votre-deploiement-en-creant-des-conteneurs-avec-docker/6211390-installez-docker-sur-votre-poste

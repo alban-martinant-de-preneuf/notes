@@ -13,7 +13,6 @@
 			- `curl -s https://getcomposer.org/installer | php`
 			- `sudo mv composer.phar /usr/local/bin/composer`
 		- `composer require altorouter/altorouter`
-		- Ajouter `vendor/` à `gitignore`
 		- Créer le fichier `.htaccess` à la racine du projet et l'éditer :
 			- ```code
 			  RewriteEngine on
@@ -50,7 +49,7 @@
 				  	}
 				  }
 				  ```
-			- `composer dump-autoload` ou `composer install` si composer.json vient d'être créé.
+			- `composer dump-autoload`
 			- This command will re-generate the vendor/autoload.php file. See the dump-autoload section for more information.
 			-
 		-

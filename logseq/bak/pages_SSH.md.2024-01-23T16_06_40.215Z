@@ -37,7 +37,6 @@
 			- https://phoenixnap.com/kb/generate-ssh-key-debian-10
 	-
 	- ## Transfert de fichier via SSH
-	  collapsed:: true
 		- Il existe en effet plusieurs manières de faire pour échanger des fichiers en utilisant SSH : SCP - SFTP - SSHFS. SCP est une commande fournis par le paquet "openssh-client".
 		- Envoyer un fichier :
 		- `scp /chemin/fichier/local <user>@<serverHostname>:/chemin/dossier/distant/`

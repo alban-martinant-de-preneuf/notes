@@ -1,0 +1,21 @@
+- ## DNS over TLS
+- ## avec Quad9
+	- Éditer `/etc/systemd/resolved.conf` mettre :
+		- `DNSOverTLS=yes`
+	- Changer les adresses DNS
+		- `nmcli connection modify Freebox-172D52 ipv4.dns "9.9.9.9, 149.112.112.112"`
+		- `nmcli connection modify Freebox-172D52 ipv6.ignore-auto-dns yes`
+		- `nmcli connection modify Freebox-172D52 ipv6.dns "2620:fe::fe, 2620:fe::9"`
+		- `nmcli connection modify Freebox-172D52 ipv6.ignore-auto-dns yes`
+		- `nmcli connection up Freebox-172D52`
+	- `sudo systemctl restart systemd-resolved.service`
+-
+- ## infos
+	- voir le dns utiliser
+	- `cat /etc/resolv.conf`
+	- l'adresse `127.0.0.53` signifie que c'est le deamon systemd-resolve géréré par systemd qui gère les réquêtes en écoutant sur cette adresse.
+	- pour voir les dns utilisés par systemd-resolve :
+	- `resolvectl status`
+-
+- https://www.ubuntubuzz.com/2022/04/enable-browsing-with-dns-over-tls-dot-on-ubuntu-made-easy.html?m=1
+- https://www.internetsociety.org/fr/blog/2018/12/dns-over-tls-sous-linux-systemd/

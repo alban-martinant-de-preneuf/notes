@@ -50,7 +50,7 @@
 				  	}
 				  }
 				  ```
-			- `composer dump-autoload` ou `composer install` si composer.json vient d'être créé.
+			- `composer dump-autoload`
 			- This command will re-generate the vendor/autoload.php file. See the dump-autoload section for more information.
 			-
 		-
